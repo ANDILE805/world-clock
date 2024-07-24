@@ -9,12 +9,14 @@ function updateTime() {
       .format("h:mm:ss [<small>]A[</small>]");
   }
   let JHBElement = document.querySelector("#Johannesburg");
-  let JHBDateElement = JHBElement.querySelector(".date");
-  let JHBTimeElement = JHBElement.querySelector(".time");
-  JHBDateElement.innerHTML = moment().format("MMMM Do YYYY");
-  JHBTimeElement.innerHTML = moment()
-    .tz("Africa/Johannesburg")
-    .format("h:mm:ss [<small>]A[</small>]");
+  if (JHBElement) {
+    let JHBDateElement = JHBElement.querySelector(".date");
+    let JHBTimeElement = JHBElement.querySelector(".time");
+    JHBDateElement.innerHTML = moment().format("MMMM Do YYYY");
+    JHBTimeElement.innerHTML = moment()
+      .tz("Africa/Johannesburg")
+      .format("h:mm:ss [<small>]A[</small>]");
+  }
 }
 
 function updateCity(event) {
